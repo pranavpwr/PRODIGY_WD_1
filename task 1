@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff; /* Light blue background color */
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #navbar a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        section {
+            margin-top: 80px; /* Adjust this value based on your header's height */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="navbar">
+    <a href="#" class="menu-item">Home</a>
+    <a href="#" class="menu-item">About</a>
+    <a href="#" class="menu-item">Services</a>
+    <a href="#" class="menu-item">Contact</a>
+</div>
+
+<section>
+    <h1>WELCOME TO THE WEBSITE</h1>
+    <p>This is a responsive landing page.</p>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var navbar = document.getElementById("navbar");
+
+        // Change background color on scroll
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = "#555";
+            } else {
+                navbar.style.backgroundColor = "#333";
+            }
+        });
+
+        // Change background color on hover
+        var menuItems = document.getElementsByClassName("menu-item");
+        for (var i = 0; i < menuItems.length; i++) {
+            menuItems[i].addEventListener("mouseenter", function() {
+                this.style.backgroundColor = "#555";
+                this.style.color = "#fff";
+            });
+            menuItems[i].addEventListener("mouseleave", function() {
+                this.style.backgroundColor = "#333";
+                this.style.color = "#fff";
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
